@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 /**
- * main - Entry point of program
- * Return: Always 1 (success)
+ * main - prints a quote without printf nor puts
+ * Return: 1
 */
 
 int main(void)
 {
-	write("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
 	return (1);
 }
