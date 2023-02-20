@@ -13,13 +13,10 @@ int main(void)
 
 	for (letter = 'A'; letter <= 'Z'; letter++)
 	{
-		char low = tolower(letter);
+	char low = tolower(letter);
 
-		putchar(low);
-	
+	putchar(low);
 	}
-	
 	putchar('\n');
 	return (0);
 }
-
