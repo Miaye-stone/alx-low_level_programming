@@ -16,8 +16,10 @@ int main(void)
 		char low = tolower(letter);
 
 		putchar(low);
+	
 	}
-
+	
+	putchar('\n');
 	return (0);
 }
 
