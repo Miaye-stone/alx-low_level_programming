@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 /**
  * main - letters of the alphabet in lower then uppercase using putchar
  *
@@ -14,12 +13,13 @@ int main(void)
 
 	for (sm = 'a'; sm <= 'z'; sm++)
 	{
-	big = toupper(sm);
-
 	putchar(sm);
+	}
+
+	for (big = 'A'; big <= 'Z'; big++)
+	{
 	putchar(big);
 	}
 	putchar('\n');
-
 	return (0);
 }
