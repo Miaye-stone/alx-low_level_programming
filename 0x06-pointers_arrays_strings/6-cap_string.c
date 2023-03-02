@@ -7,29 +7,25 @@
 
 char *cap_string(char *str)
 {
-	int index = 0;
+	int index = 0, i;
+	int spe_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
+	if (*(str + index) >= 97 && *(str + index) <= 122)
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-				str[index - 1] == '\t' ||
-				str[index - 1] == '\n' ||
-				str[index - 1] == ',' ||
-				str[index - 1] == ';' ||
-				str[index - 1] == '.' ||
-				str[index - 1] == '!' ||
-				str[index - 1] == '?' ||
-				str[index - 1] == '"' ||
-				str[index - 1] == '(' ||
-				str[index - 1] == ')' ||
-				str[index - 1] == '{' ||
-				str[index - 1] == '}' ||
-				index == 0)
+		*(str + index) = *(str + index) - 32;
+	}
+	index++;
+	while (*(str + index) != '\0')
+	{
+		for (i = 0; i < 13; i++)
 		{
-			str[index] -= 32;
+			if (*(str + index) == spe_words[i])
+			{
+				if ((*(str + (index + 1)) >= 97) && (*(str + (index + 1)) <= 122))
+					*(str + (index + 1)) = *(str + (index + 1)) - 32;
+				break;
+			}
 		}
-
 		index++;
 	}
 	return (str);
